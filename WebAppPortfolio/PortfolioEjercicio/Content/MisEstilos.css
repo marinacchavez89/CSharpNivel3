@@ -1,0 +1,58 @@
+﻿.perfil{
+    text-align: justify;
+}
+
+.perfilProfesional {
+    background-color: whitesmoke;
+    padding: 20px;
+}
+
+
+.presentacion {
+    background-color: whitesmoke;
+    padding: 150px;
+    border-radius: 3px;
+    max-width: 90%;
+}
+
+.container_form {
+    background-color: whitesmoke;  
+    padding: 10%;
+    margin: 5%;
+}
+
+
+.nombre {
+    color: midnightblue;
+}
+:hover.nav-link{
+    padding: 1%;
+}
+
+.jumbotron {
+    padding: 90px;
+    background-color: dimgrey;
+    color: black;
+    background-image: url("https://img.freepik.com/vector-premium/fondo-geometrico-gris-claro-marco-abstracto-banner_149326-2265.jpg?w=2000");
+}
+
+.lead{
+    color: black;
+}
+
+.btnIngresar {
+    height: 40px;    
+    background-color: grey;
+    border-color: midnightblue;
+    border-style: solid;
+    border-radius: 3px;
+    width: 100px;  
+}
+
+
+:hover.btnIngresar {
+    width: 10%;
+}
+
+
+

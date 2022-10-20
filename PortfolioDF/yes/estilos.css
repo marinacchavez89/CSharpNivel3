@@ -1,0 +1,208 @@
+body{
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.header{
+    height: 65px;
+    background-color: white;  
+    display: flex;
+    justify-content: space-between;   
+}
+
+.container-fluid{
+    padding-top: 10px;
+    margin-right: 10px; 
+    display: flexbox;
+    justify-content: space-between;
+    text-align: right;
+}    
+
+.loguitos{
+    border-radius: 20px;
+}
+
+.nombre{
+    text-align: left;
+    background-color: white;  
+    font-size: 20px;
+    font-weight: bold;
+    padding-top: 20px;
+    padding-left: 10px;
+    display: grid;
+    color: black;
+}
+
+img:hover{
+    transform: scale(1.1);
+}
+
+.cara:hover{
+    transform: scale(1.4);
+}
+
+.cara{
+    border-radius: 500px;
+    height: 200px;
+}
+.uno{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: calc(100vh - 65px);
+    background-color: white;
+    color: white;
+    background-image: url("imagenes/banner.jpg");
+    /* padding-top: 10%; */
+}
+.caja-central{
+    margin-top: 10%;
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    border-radius: 20px;
+    overflow: hidden;
+    height: 50%;
+    
+}
+.caja-cara{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    background-color: #141934;
+}
+.caja-presentacion{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    background-color: white;
+    color: #303030;
+    padding: 10px;
+    
+}
+
+.dos{
+    background-color: white;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-left: 20%;
+    padding-right: 20%;
+    text-align: justify;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 80px;
+    margin-top: 20px;
+    border-color: blue;
+    width: 59%;
+    height: 90%;
+}
+
+.tres{
+    background-color: white;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-left: 20%;
+    padding-right: 20%;
+    text-align: justify;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 80px;
+    margin-top: 20px;
+    border-color: blue;
+    width: 59%;
+    height: 90%;
+}
+
+.cuatro{
+    background-color: white;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-left: 20%;
+    padding-right: 20%;
+    text-align: justify;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 80px;
+    margin-top: 20px;
+    border-color: blue;
+    width: 59%;
+    height: 90%;
+}
+.aptitudes{
+    text-align: center;
+}
+
+.titulosEstudios{
+    text-decoration: underline;
+}
+
+.loguitos2{
+    border-radius: 250px;
+}
+
+.card a, footer a {
+    color: white;
+}
+
+.red-social{
+    height: 60px;
+    background-color: #F2F2F2;
+    border-radius: 50px;
+}
+
+footer{
+    background-color: #141934;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    color: white;
+    height: 180px;
+    margin-top: 20px;
+}
+.contacto{
+    width: 30%;
+    display: flex;
+    justify-content: center;
+}
+
+.form{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+@media (max-width: 1000px) {
+    .caja-central{
+        width: 90%;
+        height: 70%;
+        flex-direction: column;
+    }
+    .caja-cara{
+        width: 100%;
+        height: 50%;
+    }
+    .caja-presentacion{
+        width: 100%;
+        height: 50%;
+        align-items: flex-start;
+    }
+    .aptitudes{
+        width: auto;
+    }  
+    .red-social{
+        margin: 0 10px 0 10px;
+    }
+}
