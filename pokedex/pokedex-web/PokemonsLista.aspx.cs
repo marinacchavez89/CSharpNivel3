@@ -14,6 +14,12 @@ namespace pokedex_web
         public bool FiltroAvanzado { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!Seguridad.esAdmin(Session["trainee"]))
+            {
+                Session.Add("error", "Se requieren permisos de administrador para ingresar a esta pantalla.");
+                Response.Redirect("Error.aspx");
+            }
+
             FiltroAvanzado = chkAvanzado.Checked;
             if (!IsPostBack)
             {                   
@@ -82,8 +88,8 @@ namespace pokedex_web
             }
             catch (Exception ex)
             {
-                Session.Add("error", ex);
-                throw;
+                Session.Add("error", ex.ToString());
+                Response.Redirect("Error.aspx");
             }
         }
     }
