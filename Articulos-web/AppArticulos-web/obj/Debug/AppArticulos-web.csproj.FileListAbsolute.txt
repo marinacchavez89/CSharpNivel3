@@ -1,0 +1,2 @@
+C:\Users\Usuario\Desktop\Curso C# Nivel 3\Articulos-web\AppArticulos-web\obj\Debug\AppArticulos-web.csproj.AssemblyReference.cache
+C:\Users\Usuario\Desktop\Curso C# Nivel 3\Articulos-web\AppArticulos-web\obj\Debug\AppArticulos-web.csproj.CoreCompileInputs.cache

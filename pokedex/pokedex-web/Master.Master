@@ -45,7 +45,7 @@
                     %>
                              <asp:Button Text="Salir" ID="btnSalir" CssClass="btn btn-primary me-2" OnClick="btnSalir_Click" runat="server" />
                     <% } %>
-                    <asp:Label Text="text" ID="lblUser" CssClass="navbar-text me-2" runat="server" />
+                    <asp:Label Text="" ID="lblUser" CssClass="navbar-text me-2" runat="server" />
                     <asp:Image ID="imgAvatar" style="width: 40px; height: 40px; border-radius: 20px;" runat="server" />
                 </div>
             </div>
