@@ -18,10 +18,19 @@ namespace AppArticulos_web
 
         protected void btnLogin_Click(object sender, EventArgs e)
         {
+            Page.Validate();
+            if (!Page.IsValid)
+                return;
+
             Trainee trainee = new Trainee();
             TraineeNegocio negocio = new TraineeNegocio();
             try
             {
+                if (Validacion.validaTextoVacio(txtEmail) || Validacion.validaTextoVacio(txtPassword))
+                {
+                    Session.Add("error", "Debes completar Email y contraseña.");
+                    Response.Redirect("Error.aspx");
+                }
                 trainee.Email = txtEmail.Text;
                 trainee.Pass = txtPassword.Text;
                 if (negocio.Login(trainee))
@@ -31,11 +40,12 @@ namespace AppArticulos_web
                 }
                 else
                 {
-                    Session.Add("eror", "Email o contraseña incorrectos");
-                    Response.Redirect("Error.aspx");
+                    Session.Add("error", "Email o contraseña incorrectos.");
+                    Response.Redirect("Error.aspx", false);
                 }
 
             }
+            catch (System.Threading.ThreadAbortException ex) { }    
             catch (Exception ex)
             {
                 Session.Add("error", ex.ToString());

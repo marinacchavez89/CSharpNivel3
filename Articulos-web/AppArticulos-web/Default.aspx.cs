@@ -10,24 +10,30 @@ using negocio;
 namespace AppArticulos_web
 {
     public partial class Default : System.Web.UI.Page
-    {
+    {       
         public List<Articulo> ListaArticulo { get; set; }
         protected void Page_Load(object sender, EventArgs e)
-        {   
+        {  
             ArticuloNegocio negocio = new ArticuloNegocio();
             ListaArticulo = negocio.listarConSP();
 
             if (!IsPostBack)
             {
                 repRepetidor.DataSource = ListaArticulo;
-                repRepetidor.DataBind();
+                repRepetidor.DataBind();  
+                
             }
-            
         }
 
         protected void btnComprar_Click(object sender, EventArgs e)
         {
-            string comprarId = ((Button)sender).CommandArgument;
+            string valor = ((Button)sender).CommandArgument; 
+            
+        }
+
+        protected void chkFavorito_CheckedChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

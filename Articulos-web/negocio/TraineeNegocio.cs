@@ -74,10 +74,10 @@ namespace negocio
             {               
                 datos.setearConsulta("update USERS set urlImagenPerfil = @imagen, nombre = @nombre, apellido = @apellido where Id = @id");
                 //datos.setearParametro("@imagen", user.ImagenPerfil != null ? user.ImagenPerfil : (object)DBNull.Value);
-                datos.setearParametro("@imagen", (object)user.ImagenPerfil ?? DBNull.Value);
-                datos.setearParametro("id", user.Id);
+                datos.setearParametro("@imagen", (object)user.ImagenPerfil ?? DBNull.Value);                
                 datos.setearParametro("@nombre", user.Nombre);
                 datos.setearParametro("@apellido", user.Apellido);
+                datos.setearParametro("id", user.Id);
                 datos.ejecutarAccion();
             }
             catch (Exception ex)

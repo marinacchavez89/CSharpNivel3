@@ -29,11 +29,14 @@
                 <div class="col">
                     <div class="card">
                         <img src="<%#Eval("ImagenUrl") %>" class="card-img-top" alt="Imagen del articulo">
+                        <%--<asp:Image ImageUrl="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/1200px-Placeholder_view_vector.svg.png"
+                        runat="server" ID="imgArticulo" CssClass="card-img-top" Width="60%" />--%>
                         <div class="card-body">
                             <h5 class="card-title"><%#Eval("Nombre") %></h5>
                             <p class="card-text"><%#Eval("Descripcion") %></p>
                             <a href="DetalleArticulo.aspx?id=<%#Eval("Id") %>">Ver detalle</a>
                             <asp:Button Text="Comprar" CssClass="btn btn-secondary" ID="btnComprar" CommanArgument='<%#Eval("Id") %>' CommandName="ArticuloId" OnClick="btnComprar_Click" runat="server" />
+                            <asp:CheckBox Text="Favorito" ID="chkFavorito" autoposback="true" OnCheckedChanged="chkFavorito_CheckedChanged" runat="server" />
                         </div>
                     </div>
                 </div>

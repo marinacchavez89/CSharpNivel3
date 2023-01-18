@@ -1,6 +1,12 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master.Master" AutoEventWireup="true" CodeBehind="MiPerfil.aspx.cs" Inherits="AppArticulos_web.MiPerfil" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <style>
+        .validacion{
+            color:red;
+            font-size:12px;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <h2>Mi Perfil</h2>
@@ -14,15 +20,13 @@
             <div class="mb-3">
                 <label class="form-label">Nombre</label>
                 <asp:TextBox runat="server" CssClass="form-control" ID="txtNombre" />
+                <asp:RequiredFieldValidator CssClass="validacion" ErrorMessage="El nombre es requerido." ControlToValidate="txtNombre" runat="server" />
             </div>
             <div class="mb-3">
                 <label class="form-label">Apellido</label>
                 <asp:TextBox runat="server" CssClass="form-control" ID="txtApellido" />
+                <asp:RequiredFieldValidator CssClass="validacion" ErrorMessage="El apellido es requerido." ControlToValidate="txtApellido" runat="server" />
             </div>
-            <%--<div class="mb-3">
-                <label class="form-label">Fecha de Nacimiento</label>
-                <asp:TextBox runat="server" CssClass="form-control" ID="txtFechaNacimiento" TextMode="DateTime" />
-            </div>--%>
         </div>
 
         <div class="col-md-4">

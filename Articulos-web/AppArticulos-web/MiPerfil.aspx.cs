@@ -14,7 +14,8 @@ namespace AppArticulos_web
         protected void Page_Load(object sender, EventArgs e)
         {
             try
-            {
+            {             
+
                 if (!IsPostBack)
                 {
                     if (Seguridad.sesionActiva(Session["trainee"]))
@@ -42,7 +43,12 @@ namespace AppArticulos_web
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
             try
-            {                   
+            {   
+                // Deben estar para que las validaciones de los controles asp funcionen:
+                Page.Validate();
+                if (!Page.IsValid)
+                    return;
+
                 TraineeNegocio negocio = new TraineeNegocio();
                 Trainee user = (Trainee)Session["trainee"];
                 //Escribir img
@@ -61,12 +67,13 @@ namespace AppArticulos_web
 
                 //Leer img
                 Image img = (Image)Master.FindControl("imgAvatar");
-                img.ImageUrl = "~/Images/" + user.ImagenPerfil;                
+                img.ImageUrl = "~/Images/" + user.ImagenPerfil;
 
             }
             catch (Exception ex)
             {
                 Session.Add("error", ex.ToString());
+                Response.Redirect("Error.aspx");
             }
         }
     }

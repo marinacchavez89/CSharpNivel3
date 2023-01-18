@@ -20,7 +20,7 @@ namespace negocio
 
             try
             {
-                conexion.ConnectionString = "server=.\\SQLEXPRESS; database=CATALOGO_DB; integrated security=true";
+                conexion.ConnectionString = "server=.\\SQLEXPRESS; database=CATALOGO_WEB_DB; integrated security=true";
                 comando.CommandType = System.Data.CommandType.Text;
                 comando.CommandText = "Select A.Id, Codigo, Nombre, A.Descripcion, A.IdMarca, M.Descripcion TipoMarca, A.IdCategoria, C.Descripcion TipoCategoria, ImagenUrl, A.Precio From ARTICULOS A, CATEGORIAS C, MARCAS M where C.Id = A.IdCategoria AND A.IdCategoria = M.Id ";
                 if (id != "")
@@ -108,7 +108,8 @@ namespace negocio
             AccesoDatos datos = new AccesoDatos();
 
             try
-            {   //El insert necesita corregir la URL con los @parametros o concatenar cadena. 
+            {   
+                //El insert necesita corregir la URL con los @parametros o concatenar cadena. 
                 datos.setearConsulta("insert into ARTICULOS (Codigo, Nombre, Descripcion, IdMarca, IdCategoria, ImagenUrl, Precio)values( '" + nuevo.Codigo + "' ,'" + nuevo.Nombre + "','" + nuevo.Descripcion + "', @idMarca, @idCategoria, @imagenUrl, @precio)");
                 datos.setearParametro("@idMarca", nuevo.TipoMarca.Id);
                 datos.setearParametro("@idCategoria", nuevo.TipoCategoria.Id);

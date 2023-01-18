@@ -1,6 +1,12 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master.Master" AutoEventWireup="true" CodeBehind="FormularioArticulo.aspx.cs" Inherits="AppArticulos_web.FormularioArticulo" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+     <style>
+        .validacion{
+            color:red;
+            font-size:12px;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
@@ -14,11 +20,13 @@
             <div class="mb-3">
                 <label for="txtCodigo" class="form-label">Código</label>
                 <asp:TextBox runat="server" ID="txtCodigo" CssClass="form-control" />
+                <asp:RequiredFieldValidator CssClass="validacion" ErrorMessage="El Código es requerido." ControlToValidate="txtCodigo" runat="server" />
             </div>
 
             <div class="mb-3">
                 <label for="txtNombre" class="form-label">Nombre</label>
                 <asp:TextBox runat="server" ID="txtNombre" CssClass="form-control" />
+                <asp:RequiredFieldValidator CssClass="validacion" ErrorMessage="El nombre es requerido." ControlToValidate="txtNombre" runat="server" />
             </div>
 
 
@@ -35,6 +43,7 @@
             <div class="mb-3">
                 <label for="txtPrecio" class="form-label">Precio</label>
                 <asp:TextBox runat="server" ID="txtPrecio" CssClass="form-control" />
+                <asp:RegularExpressionValidator ErrorMessage="Ingrese solo números." CssClass="validacion" ValidationExpression="^[0-9]+$" ControlToValidate="txtPrecio" runat="server" />
             </div>
 
 
@@ -62,8 +71,6 @@
                 <label for="txtDescripcion" class="form-label">Descripción</label>
                 <asp:TextBox runat="server" ID="txtDescripcion" TextMode="MultiLine" CssClass="form-control" />
             </div>
-
-
 
             <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                 <ContentTemplate>

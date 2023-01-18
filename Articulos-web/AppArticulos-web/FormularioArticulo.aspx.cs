@@ -66,9 +66,8 @@ namespace AppArticulos_web
             }
             catch (Exception ex)
             {
-                throw ex;
-                //Session.Add("error", ex.ToString());
-                //Response.Redirect("Error.aspx");
+                Session.Add("error", ex.ToString());
+                Response.Redirect("Error.aspx");
             }
         }
 
@@ -76,6 +75,10 @@ namespace AppArticulos_web
         {
             try
             {
+                Page.Validate();
+                if (!Page.IsValid)
+                    return;
+
                 Articulo nuevo = new Articulo();
                 ArticuloNegocio negocio = new ArticuloNegocio();
 
@@ -103,6 +106,7 @@ namespace AppArticulos_web
                 Response.Redirect("ArticulosLista.aspx", false);
 
             }
+            
             catch (Exception ex)
             {
 
@@ -133,10 +137,11 @@ namespace AppArticulos_web
                 }
 
             }
+            catch (System.Threading.ThreadAbortException ex) { }
             catch (Exception ex)
             {
 
-                Session.Add("Error", ex.ToString());
+                Session.Add("error", ex.ToString());
                 Response.Redirect("Error.aspx");
             }
         }
