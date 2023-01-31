@@ -28,7 +28,7 @@
             <ItemTemplate>
                 <div class="col">
                     <div class="card">
-                        <img src="<%#Eval("ImagenUrl") %>" class="card-img-top" alt="Imagen del articulo">
+                        <img src="<%#Eval("ImagenUrl") %>" class="card-img-top" alt="Imagen del articulo" Style="max-width:500px;max-height:600px;" onerror="this.src='https://www.mansor.com.uy/wp-content/uploads/2020/06/imagen-no-disponible2.jpg'">
                         <%--<asp:Image ImageUrl="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/1200px-Placeholder_view_vector.svg.png"
                         runat="server" ID="imgArticulo" CssClass="card-img-top" Width="60%" />--%>
                         <div class="card-body">
@@ -36,7 +36,7 @@
                             <p class="card-text"><%#Eval("Descripcion") %></p>
                             <a href="DetalleArticulo.aspx?id=<%#Eval("Id") %>">Ver detalle</a>
                             <asp:Button Text="Comprar" CssClass="btn btn-secondary" ID="btnComprar" CommanArgument='<%#Eval("Id") %>' CommandName="ArticuloId" OnClick="btnComprar_Click" runat="server" />
-                            <asp:CheckBox Text="Favorito" ID="chkFavorito" autoposback="true" OnCheckedChanged="chkFavorito_CheckedChanged" runat="server" />
+                            <a href="Favoritos.aspx?id=<%#Eval("Id") %>">⭐</a>                            
                         </div>
                     </div>
                 </div>

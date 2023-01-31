@@ -6,25 +6,19 @@
     <h2>Mis articulos favoritos</h2>
     <br />
 
-    <div class="row row-cols-1 row-cols-md-3 g-4">
-
-        <asp:Repeater ID="repRepetidor" runat="server">
-            <ItemTemplate>
-                <div class="col">
-                    <div class="card">
-                        <img src="<%#Eval("ImagenUrl") %>" class="card-img-top" alt="Imagen del articulo">
-                        <%--<asp:Image ImageUrl="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/1200px-Placeholder_view_vector.svg.png"
-                        runat="server" ID="imgArticulo" CssClass="card-img-top" Width="60%" />--%>
-                        <div class="card-body">
-                            <h5 class="card-title"><%#Eval("Nombre") %></h5>
-                            <p class="card-text"><%#Eval("Descripcion") %></p>
-                            <a href="DetalleArticulo.aspx?id=<%#Eval("Id") %>">Ver detalle</a>
-                            <%--<asp:Button Text="Comprar" CssClass="btn btn-secondary" ID="btnComprar" CommanArgument='<%#Eval("Id") %>' CommandName="ArticuloId" OnClick="btnComprar_Click" runat="server" />--%>
-                            <%--<asp:CheckBox Text="Favorito" ID="chkFavorito" OnCheckedChanged="chkFavorito_CheckedChanged" runat="server" />--%>
-                        </div>
-                    </div>
-                </div>
-            </ItemTemplate>
-        </asp:Repeater>
-    </div>
+     <asp:GridView ID="dgvArticulos" CssClass="table" AutoGenerateColumns="false" DataKeyNames="Id"
+        OnSelectedIndexChanged="dgvArticulos_SelectedIndexChanged"
+        OnPageIndexChanging="dgvArticulos_PageIndexChanging"
+        AllowPaging="true" PageSize="5" runat="server">
+        <Columns>
+            <asp:BoundField HeaderText="Código" DataField="Codigo" />
+            <asp:BoundField HeaderText="Nombre" DataField="Nombre" />
+            <asp:BoundField HeaderText="Descripción" DataField="Descripcion" />
+            <asp:BoundField HeaderText="Marca" DataField="TipoMarca.Descripcion" />
+            <asp:BoundField HeaderText="Categoría" DataField="TipoCategoria.Descripcion" />
+            <asp:BoundField HeaderText="Precio" DataField="Precio" />
+            <asp:CommandField HeaderText="Favoritos" ShowSelectButton="true" SelectText="❌" />
+        </Columns>
+    </asp:GridView>
+    
 </asp:Content>
