@@ -15,19 +15,24 @@ namespace AppArticulos_web
         
         protected void Page_Load(object sender, EventArgs e)
         {
-            string id = Request.QueryString["id"] != null ? Request.QueryString["id"].ToString() : "";
-            if (id != "" && !IsPostBack)
-            {
-                ArticuloFavoritoNegocio negocio = new ArticuloFavoritoNegocio();
-                ArticuloFavorito nuevo = new ArticuloFavorito();
-                negocio.insertarNuevoFavorito(nuevo);
+            //string id = Request.QueryString["id"] != null ? Request.QueryString["id"].ToString() : "";
+            //if (!IsPostBack)
+            //{
+            //    ArticuloFavoritoNegocio negocio = new ArticuloFavoritoNegocio();
+            //    ArticuloFavorito nuevo = new ArticuloFavorito();
 
-                Trainee user = (Trainee)Session["trainee"];
-                
-                nuevo.IdUser = user.Id;
-                nuevo.IdArticulo = int.Parse(id);
+            //    Trainee user = (Trainee)Session["trainee"];
 
-            }
+            //    nuevo.IdUser = user.Id;
+            //    nuevo.IdArticulo = int.Parse(id);
+
+            //    negocio.insertarNuevoFavorito(nuevo);
+
+            //    Session.Add("listaArticulosFavoritos", negocio.listarFavoritos());
+            //    dgvArticulos.DataSource = Session["listaArticulosFavoritos"];
+            //    dgvArticulos.DataBind();
+
+            //}
 
         }
 

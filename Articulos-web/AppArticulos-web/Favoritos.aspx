@@ -6,6 +6,8 @@
     <h2>Mis articulos favoritos</h2>
     <br />
 
+    <h3>Proximamente... ⭐</h3>
+
      <asp:GridView ID="dgvArticulos" CssClass="table" AutoGenerateColumns="false" DataKeyNames="Id"
         OnSelectedIndexChanged="dgvArticulos_SelectedIndexChanged"
         OnPageIndexChanging="dgvArticulos_PageIndexChanging"
